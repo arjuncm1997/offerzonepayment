@@ -1,0 +1,106 @@
+{% extends 'admin.html' %}
+{% block content %}
+
+
+      
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <!------ Include the above in your HEAD tag ---------->
+   
+   <div class="container search-table" style="width: 700px;">
+               <div class="search-box">
+                   <div class="row">
+                       <div class="col-md-3">
+                     
+                       </div>
+                       <div class="col-md-9">
+                           <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search here" >
+                          
+                           <script>
+                               $(document).ready(function () {
+                                   $("#myInput").on("keyup", function () {
+                                       var value = $(this).val().toLowerCase();
+                                       $("#myTable tr").filter(function () {
+                                           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                       });
+                                   });
+                               });
+                           </script>
+                       </div> 
+                   </div>
+               </div>
+                   <table class="table css-serial" id="myTable">
+                       <thead>
+                           <tr >
+                              <th style="color: black;">No</th>
+                               <th style="color: black;">Image</th>
+                               <th style="color: black;">Name</th>
+                               <th style="color: black;">Price</th>
+                               <th style="color: black;">Description</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                           
+                       {%for product in product %}
+                       <tr>
+                         <td style="color: black;"></td>
+                           <td style="color: black;"><span class="image-block">
+                               <a class="image-zoom" href="/static/pics/{{product.img}}" rel="prettyPhoto[gallery]" style="height: 250px;width: 335px;">
+                                  <figure>
+                                     <img src="/static/pics/{{product.img}}" class="img-fluid" alt="" style="height: 50px;width: 50px;">
+                                     <figcaption>
+                                        
+                                     </figcaption>
+                                  </figure>
+                               </a>
+                            </span></td>
+                           <td style="color: black;">{{product.name}}</td>
+                           <td style="color: black;">{{product.price}}</td>
+                           <td style="color: black;">{{product.desc}}</td>
+                       </tr>
+                    
+                       {%endfor%}
+                       </tbody>
+                   </table>
+   
+               </div>
+           </div>
+
+<style>
+ .search-table {
+padding: 0%;
+margin-top: 4%;
+}
+.search-box{
+   background: #c1c1c1;
+   border: 1px solid black;
+   padding: 3%;
+}
+.search-box input:focus{
+   box-shadow:none;
+   border:2px solid #eeeeee;
+}
+.search-list{
+   background: #fff;
+   border: 1px solid #ababab;
+   border-top: none;
+}
+.search-list h3{
+   background: #eee;
+   padding: 3%;
+   margin-bottom: 0%;
+}
+.css-serial {
+    counter-reset: serial-number;  /* Set the serial number counter to 0 */
+  }
+  
+  .css-serial td:first-child:before {
+    counter-increment: serial-number;  /* Increment the serial number counter */
+    content: counter(serial-number);  /* Display the counter */
+  }
+</style>
+
+
+ </div>
+
+{% endblock %}

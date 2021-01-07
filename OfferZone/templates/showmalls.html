@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+    <div class="card-deck" style="width:2000px">
+        {% for mall in malls %}
+        
+        <div class="card bg-light">
+            
+          <div class="card-body text-center">
+              <img class="card-img-top" src="static/pics/{{mall.picture}}" >
+            <h6 class="card-text">{{mall.name}}</h6>
+            <h6 class="card-text">{{mall.addr2}}</h6>
+            
+
+            <a href="#" class="btn btn-dark">{{mall.id}}</a><br>
+
+            <a href="{{ url_for('show_shops') }}" class="btn btn-primary">See Shop</a>
+          </div>
+        </div>
+      
+        {% endfor %}
+     
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+    <div class="card-deck" style="width:2000px">
+        {% for offer in offers %}
+        
+        <div class="card bg-light">
+            
+          <div class="card-body text-center">
+              <img class="card-img-top" src="static/pics/{{offer.image}}" >
+            <h6 class="card-text">{{offer.name}}</h6>
+            <h6 class="card-text">{{offer.price}}</h6>
+            <a href="#" class="btn btn-primary">{{offer.dis}}</a>
+
+            <a href="#" class="btn btn-danger">{{offer.productid}}</a><br>
+
+            <a href="{{ url_for('home') }}" class="btn btn-dark">Back to home</a>
+          </div>
+        </div>
+      
+        {% endfor %}
+     
+    </div>
+
+{% endblock content %}

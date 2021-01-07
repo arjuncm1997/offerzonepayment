@@ -1,0 +1,52 @@
+{% extends 'admin.html' %}
+{% block content %}
+
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                  <div class="page-header">
+                    <h1><small class="pull-right"></small> Feedback </h1>
+                  </div> 
+                   <div class="comments-list">
+                      {% for feed in feedback %}
+
+
+                       <div class="media">
+                           
+                              <img src="http://lorempixel.com/40/40/people/1/">
+                            </a>
+                            <div class="media-body">
+                                
+                              <h3 class="media-heading user_name">Name: {{feed.name}}
+                              </h3>
+                              <h5>Email: {{feed.email}}</h5>
+                              <h5>Message: {{feed.message}}</h5>
+                            </div>
+                          </div>
+                    {% endfor %}
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+        <style>
+        
+        .user_name{
+    font-size:14px;
+    font-weight: bold;
+}
+.comments-list .media{
+    border-bottom: 1px dotted #ccc;
+}
+        </style>
+
+{% endblock %}

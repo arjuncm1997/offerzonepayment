@@ -1,0 +1,75 @@
+{% extends "slayout.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2></h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Number</th>
+    <th>Address</th>
+    <th>status</th>
+    <th></th>
+  </tr>
+  {% for view in view %}
+  <tr>
+    <td> {{view.uname}}</td>
+    <td>{{view.unumber}}</td>
+    <td>{{view.uaddress}}</td>
+    <form action="/delivery/{{view.id}}" method="POST">
+        {{form.hidden_tag()}}
+       <td style="width: 178px;" >
+        {{view.tracking}}{% if form.name.errors %}
+                {{ form.name(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.name.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <select class="form-control" name="name">
+                    <option></option>
+                    <option>Processing</option>
+                    <option>Shipping</option>
+                    <option>Delivered</option>
+                </select>
+            {% endif %} 
+       </td>
+       <td><a>{{ form.submit(class="btn btn-outline-info") }}</a></td>
+    </form>
+    
+  </tr>
+  {% endfor %}
+  
+  
+</table>
+
+</body>
+</html>
+
+
+
+{% endblock %}

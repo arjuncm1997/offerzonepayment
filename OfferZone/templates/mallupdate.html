@@ -1,0 +1,145 @@
+{% extends 'admin.html'%}
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+            <div class="content-section">
+                    <div class="media">
+                            <img class="rounded-circle account-img" src="{{pic}}" style="width: 300px;height: 150px;">
+                            <div class="media-body">
+                              
+                             
+                            </div>
+                     </div>
+                    <form method="POST" action="" enctype="multipart/form-data">
+
+                
+                    {{ form.hidden_tag() }}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">{{title}}</legend>
+                        <div class="form-group">
+                            {{ form.name.label(class="form-control-label") }}
+
+                            {% if form.name.errors %}
+                                {{ form.name(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.name.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.name(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.desc.label(class="form-control-label") }}
+                            {% if form.desc.errors %}
+                                {{ form.desc(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.desc.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.desc(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        
+                        <div class="form-group">
+                            {{ form.addr1.label(class="form-control-label") }}
+                            {% if form.addr1.errors %}
+                                {{ form.addr1(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.addr1.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.addr1(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.addr2.label(class="form-control-label") }}
+                            {% if form.addr2.errors %}
+                                {{ form.addr2(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.addr2.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.addr2(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        
+                        <div class="form-group">
+                            {{ form.place.label(class="form-control-label") }}
+                            {% if form.place.errors %}
+                                {{ form.place(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.place.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                            <select class="form-control" name="place">
+                                <option>{{place}}</option>
+                                <option>Alappuzha</option>
+                                <option>Ernakulam</option>
+                                <option>Idukki</option>
+                                <option>Kannur</option>
+                                <option>Kasaragod</option>
+                                <option>Kollam</option>
+                                <option>Kottayam</option>
+                                <option>Kozhikode</option>
+                                <option>Malappuram</option>
+                                <option>Palakkad</option>
+                                <option>Pathanamthitta</option>
+                                <option>Thiruvananthapuram</option>
+                                <option>Thrissur</option>
+                                <option>Wayanad</option>
+
+                            </select>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.image.label() }}
+                            {{ form.image(class="form-control-file") }}
+                            {% if form.image.errors %}
+                                {% for error in form.image.errors %}
+                                    <span class="text-danger">{{ error }}</span></br>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </fieldset>
+                    <div class="form-group">
+                        {{ form.submit(class="btn btn-outline-info") }}
+                        {% if action %}
+                            <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                        {% endif %}
+                    </div>
+                </form>
+                {% if action %}
+                 <!-- Modal -->
+                 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" >Delete Mall?</h5>
+                            <button type="button" class="close" data-dismiss="modal" ></button>
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <form action="/malldelete/{{mall.id}}" method="POST">
+                                <input class="btn btn-danger" type="submit" value="Delete">
+                            </form>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+</div>
+{% endblock %}

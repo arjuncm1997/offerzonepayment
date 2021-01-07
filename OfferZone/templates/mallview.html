@@ -1,0 +1,85 @@
+{% extends 'admin.html' %}
+{% block content %}
+<html>
+
+
+   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+   <!------ Include the above in your HEAD tag ---------->
+   <div class="col-md-8">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+      {% endwith %}
+  </div>
+   <div class="container">
+       <div class="row col-md-6 col-md-offset-2 custyle">
+       <table class="table table-striped custab css-serial">
+       <thead>
+       <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new categories</a>
+           <tr>
+               <th>No</th>
+               <th>Add user</th>
+               <th>Image</th>
+               <th>Name</th>
+               <th class="text-center">Action</th>
+           </tr>
+       </thead>
+       {% for mall in mall %}
+               <tr>
+                   <td></td>
+                   <td>{{mall.owner}}</td>
+                   <td><span class="image-block">
+                    <a class="image-zoom" href="static/pics/{{mall.image_file}}" rel="prettyPhoto[gallery]" style="height: 250px;width: 335px;">
+                       <figure>
+                          <img src="static/pics/{{mall.image_file}}" class="img-fluid" alt="" style="height: 50px;width: 50px;">
+                          <figcaption>
+                             
+                          </figcaption>
+                       </figure>
+                    </a>
+                 </span></td>
+                 <td>{{mall.name}}</td>
+                   <td class="text-center"><a class='btn btn-info btn-xs' href="/mallupdate/{{mall.id}}"><span class=""></span> Edit</a>
+                    <a class='btn btn-info btn-xs' href="/mallapprove/{{mall.id}}"><span class=""></span> Approve</a>
+                  </td>
+               </tr>
+       {% endfor %}     
+       </table>
+       </div>
+   </div>
+
+
+</html>
+
+
+<style>
+
+.custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }
+.css-serial {
+    counter-reset: serial-number;  /* Set the serial number counter to 0 */
+  }
+  
+  .css-serial td:first-child:before {
+    counter-increment: serial-number;  /* Increment the serial number counter */
+    content: counter(serial-number);  /* Display the counter */
+  }
+</style>
+
+{% endblock %}

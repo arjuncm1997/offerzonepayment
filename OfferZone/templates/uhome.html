@@ -1,0 +1,478 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>offerzone</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Smart Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="../static/pstatic/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- pignose css -->
+<link href="../static/pstatic/css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
+
+
+<!-- //pignose css -->
+<link href="../static/pstatic/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="../static/pstatic/js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<!-- cart -->
+	<script src="../static/pstatic/js/simpleCart.min.js"></script>
+<!-- cart -->
+<!-- for bootstrap working -->
+	<script type="text/javascript" src="../static/pstatic/js/bootstrap-3.1.1.min.js"></script>
+<!-- //for bootstrap working -->
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+<script src="../static/pstatic/js/jquery.easing.min.js"></script>
+</head>
+<body>
+
+	<header>
+		<!-- top-bar -->
+		{% with messages = get_flashed_messages(with_categories=true) %}
+		<!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
+		{% if messages %}
+		  {% for category, message in messages %}
+			<div class="alert alert-{{ category }} alert-dismissible" role="alert" style="font-size: 1.5rem;">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<!-- <strong>Title</strong> --> {{ message }}
+			</div>
+		  {% endfor %}
+		{% endif %}
+	  {% endwith %}
+	</header>
+<!-- header -->
+<!-- <div class="header">
+	<div class="container">
+		<ul>
+			<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:info@example.com">info@example.com</a></li>
+		</ul>
+	</div>
+</div> -->
+<!-- //header -->
+<!-- header-bot -->
+<div class="header-bot">
+	<div class="container" style="
+    padding-top: 0px;
+    padding-bottom: 0px;
+">
+		<div class="col-md-3 header-left">
+			<h1><a href="/uhome"><img src="../static/pstatic/images/logo4.png"></a></h1>
+		</div>
+		<center>
+		<div class="col-md-6 middle" style="padding-top: 30px;"><h4 class="glyphicon glyphicon-envelope"> OfferZone@gmail.com</h4> </div>
+	</center>
+		<div class="col-md-3 header-right footer-bottom">
+			<ul>
+				<!-- <li><a href="#" class="use1" data-toggle="modal" data-target="#myModal4"><span>Login</span></a>
+					
+				</li> -->
+				<li><a class="fb" href="#"></a></li>
+				<li><a class="twi" href="#"></a></li>
+				<li><a class="insta" href="#"></a></li>
+				<li><a class="you" href="#"></a></li>
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!-- //header-bot -->
+<!-- banner -->
+<div class="ban-top">
+	<div class="container">
+		<div class="top_nav_left">
+			<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+				  <ul class="nav navbar-nav menu__list" style="padding-left: 300px;">
+					<li class="active menu__item menu__item--current"><a class="menu__link" href="">Home <span class="sr-only">(current)</span></a></li>
+					
+					<li class=" menu__item"><a class="menu__link" href="#horizontalTab">Offers</a></li>
+					<li class=" menu__item"><a class="menu__link" href="/uorder">My orders</a></li>
+					<li class=" menu__item"><a class="menu__link" href="/uucontact">Contact</a></li>
+					<li class=" menu__item"><a class="menu__link" href="/logout">Logout</a></li>
+				  </ul>
+				</div>
+			  </div>
+			</nav>	
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!-- //banner-top -->
+<!-- banner -->
+<div class="banner-grid">
+	<div id="visual">
+			<div class="slide-visual">
+				<!-- Slide Image Area (1000 x 424) -->
+				<ul class="slide-group">
+					<li><img class="img-responsive" src="../static/pstatic/images/ba1.jpg" alt="Dummy Image" /></li>
+					<li><img class="img-responsive" src="../static/pstatic/images/ba2.jpg" alt="Dummy Image" /></li>
+					<li><img class="img-responsive" src="../static/pstatic/images/ba3.jpg" alt="Dummy Image" /></li>
+				</ul>
+
+				<!-- Slide Description Image Area (316 x 328) -->
+				<div class="script-wrap">
+					<ul class="script-group">
+						<li><div class="inner-script"><img class="img-responsive" src="../static/pstatic/images/baa1.jpg" alt="Dummy Image" /></div></li>
+						<li><div class="inner-script"><img class="img-responsive" src="../static/pstatic/images/baa2.jpg" alt="Dummy Image" /></div></li>
+						<li><div class="inner-script"><img class="img-responsive" src="../static/pstatic/images/baa3.jpg" alt="Dummy Image" /></div></li>
+					</ul>
+					<div class="slide-controller">
+						<a href="#" class="btn-prev"><img src="../static/pstatic/images/btn_prev.png" alt="Prev Slide" /></a>
+						<a href="#" class="btn-play"><img src="../static/pstatic/images/btn_play.png" alt="Start Slide" /></a>
+						<a href="#" class="btn-pause"><img src="../static/pstatic/images/btn_pause.png" alt="Pause Slide" /></a>
+						<a href="#" class="btn-next"><img src="../static/pstatic/images/btn_next.png" alt="Next Slide" /></a>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	<script type="text/javascript" src="../static/pstatic/js/pignose.layerslider.js"></script>
+	<script type="text/javascript">
+	//<![CDATA[
+		$(window).load(function() {
+			$('#visual').pignoseLayerSlider({
+				play    : '.btn-play',
+				pause   : '.btn-pause',
+				next    : '.btn-next',
+				prev    : '.btn-prev'
+			});
+		});
+	//]]>
+	</script>
+
+</div>
+<!-- //banner -->
+<!-- content -->
+
+
+<!-- //content-bottom -->
+<!-- product-nav -->
+
+<div class="product-easy"id="offer">
+	<div class="container" style="margin-top: 100px;">
+		
+		<script src="../static/pstatic/js/easyResponsiveTabs.js" type="text/javascript"></script>
+		<script type="text/javascript">
+							$(document).ready(function () {
+								$('#horizontalTab').easyResponsiveTabs({
+									type: 'default', //Types: default, vertical, accordion           
+									width: 'auto', //auto or any width like 600px
+									fit: true   // 100% fit in a container
+								});
+							});
+							
+		</script>
+		<div class="sap_tabs" >
+			<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+				<ul class="resp-tabs-list">
+					<h3></h3>
+					<li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><h3 class="title" style="color: #FDA30E;font-size: 30px;">NEW OFFERS</h3></li> 
+				</ul>				  	 
+				<div class="resp-tabs-container">
+					<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+                        {% for offer in offers %}
+						<div class="col-md-3 product-men">
+							<div class="men-pro-item simpleCart_shelfItem">
+								<div class="men-thumb-item">
+									<img src="{{offer.image}}" alt="" class="pro-image-front" style="width: 218px;height: 269px; margin-left: 20px;">
+										<div class="men-cart-pro">
+											<div class="inner-men-cart-pro">
+												<a href="/uofferprofile/{{offer.offerid}}"  class="link-product-add-cart">Quick View</a>
+											</div>
+										</div>
+										<span class="product-new-top">New</span>
+										
+								</div>
+								<div class="item-info-product ">
+                                    <h4><a href="">{{offer.product}}</a></h4>
+                                    <div class="card-text dealprice" style="font-size: 25px;">&#x20b9;{{offer.new_price}}</div>
+									<div class="info-product-price">
+										M.R.P:&#x20b9;<del class="item_price" style="font-size: 30px;">{{offer.old_price}}</del> ({{offer.offer_per}}% off)
+									</div>
+									
+									<a href="/uofferprofile/{{offer.offerid}}" class="item_add single-item hvr-outline-out button2">{{offer.mall}},{{offer.shop}}</a>									
+								</div>
+							</div>
+						</div>
+						{% endfor%}
+						<div class="clearfix"></div>
+					</div>
+						
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //product-nav -->
+
+
+
+
+
+
+<!-- footer -->
+<div class="footer">
+	<div class="container">
+		<div class="col-md-3 footer-left">
+			<h2><a href="index.html"><img src="../static/pstatic/images/logo4.png" alt=" " style="
+				width: 186px;
+				height: 74px;
+			"/></a></h2>
+			<p>Offerzone is an online live website for 
+				being an virtual guide for helping the user 
+				for deciding his venue of shopping
+			</p>
+		</div>
+		<div class="col-md-9 footer-right">
+			
+			<div class="clearfix"></div>
+			<div class="sign-grds">
+				<div class="col-md-4 sign-gd">
+					<h4>Information</h4>
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#gallery">Gallery</a></li>
+						<li><a href="#offer">Offers</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</div>
+				
+				<div class="col-md-4 sign-gd-two">
+					<h4>Store Information</h4>
+					<ul>
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Address : 1234k Avenue, 4th block, <span>Newyork City.</span></li>
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email : <a href="mailto:info@example.com">OfferZone@gmail.com</a></li>
+						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone : +1234 567 567</li>
+					</ul>
+				</div>
+				<div class="col-md-4 sign-gd flickr-post">
+					<h4>Flickr Posts</h4>
+					<ul>
+						<li><a href="single.html"><img src="../static/pstatic/images/b15.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="../static/pstatic/images/b16.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="../static/pstatic/images/b17.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="../static/pstatic/images/b18.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="../static/pstatic/images/b15.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="../static/pstatic/images/b16.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="../static/pstatic/images/b17.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="../static/pstatic/images/b18.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="../static/pstatic/images/b15.jpg" alt=" " class="img-responsive" /></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<p class="copy-right"> All rights reserved | Design by <a href="/">OfferZone</a></p>
+	</div>
+</div>
+<!-- //footer -->
+<!-- login -->
+			
+<!-- //login -->
+<!---registerrr-->
+		
+			<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content modal-info" style="width: 500px;">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+						</div>
+						<div class="modal-body modal-spa">
+							<div class="login-grids">
+								<div class="login" >
+									<div class="login-bottom" style="width: 450px;">
+										<h3>Sign up for free</h3>
+										<form method="POST" action="/register">
+											{{ form2.hidden_tag() }}
+											<fieldset class="form-group">
+												<div class="form-group">
+													{{ form2.username.label(class="form-control-label") }}
+								
+													{% if form2.username.errors %}
+														{{ form2.username(class="form-control form-control-lg is-invalid") }}
+														<div class="invalid-feedback">
+															{% for error in form2.username.errors %}
+																<span>{{ error }}</span>
+															{% endfor %}
+														</div>
+													{% else %}
+														{{ form2.username(class="form-control form-control-lg") }}
+													{% endif %}
+												</div>
+												<div class="form-group">
+													{{ form2.email.label(class="form-control-label") }}
+													{% if form2.email.errors %}
+														{{ form2.email(class="form-control form-control-lg is-invalid") }}
+														<div class="invalid-feedback">
+															{% for error in form2.email.errors %}
+																<span>{{ error }}</span>
+															{% endfor %}
+														</div>
+													{% else %}
+														{{ form2.email(class="form-control form-control-lg") }}
+													{% endif %}
+												</div>
+												<div class="form-group">
+													{{ form2.user.label(class="form-control-label") }}
+													{% if form2.user.errors %}
+														{{ form2.user(class="form-control form-control-lg is-invalid") }}
+														<div class="invalid-feedback">
+															{% for error in form2.user.errors %}
+																<span>{{ error }}</span>
+															{% endfor %}
+														</div>
+													{% else %}
+														<div>
+															<select class="form-control form-control-lg" name="user">
+																<option></option>
+																<option value="mall">Mall</option>
+																<option value="user">User</option>
+															</select>
+
+
+														</div>
+														
+													{% endif %}
+												</div>
+												<div class="form-group">
+													{{ form2.password.label(class="form-control-label") }}
+													{% if form2.password.errors %}
+														{{ form2.password(class="form-control form-control-lg is-invalid") }}
+														<div class="invalid-feedback">
+															{% for error in form2.password.errors %}
+																<span>{{ error }}</span>
+															{% endfor %}
+														</div>
+													{% else %}
+														{{ form2.password(class="form-control form-control-lg") }}
+													{% endif %}
+												</div>
+												<div class="form-group">
+													{{ form2.confirm_password.label(class="form-control-label") }}
+													{% if form2.confirm_password.errors %}
+														{{ form2.confirm_password(class="form-control form-control-lg is-invalid") }}
+														<div class="invalid-feedback">
+															{% for error in form2.confirm_password.errors %}
+																<span>{{ error }}</span>
+															{% endfor %}
+														</div>
+													{% else %}
+														{{ form2.confirm_password(class="form-control form-control-lg") }}
+													{% endif %}
+												</div>
+											</fieldset>
+											<div class="form-group">
+												{{ form2.submit(class="btn btn-outline-info") }}
+											</div>
+										</form>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<p>By logging in you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+<!--loginn-->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content modal-info" style="width: 500px;">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+			</div>
+			<div class="modal-body modal-spa">
+				<div class="login-grids">
+					<div class="login">
+						<div class="login-right" style="width: 450px;">
+							<h3>Sign in with your account</h3>
+							<form method="POST" action="/login">
+								{{ form1.hidden_tag() }}
+								<fieldset class="form-group">
+									<div class="form-group ">
+										{{ form1.email.label(class="form-control-label") }}
+										{% if form1.email.errors %}
+											{{ form1.email(class="form-control form-control-lg is-invalid ") }}
+											<div class="invalid-feedback">
+												{% for error in form1.email.errors %}
+													<span>{{ error }}</span>
+												{% endfor %}
+											</div>
+										{% else %}
+											{{ form1.email(class="form-control form-control-lg ") }}
+										{% endif %}
+									</div>
+									<div class="form-group">
+										{{ form1.password.label(class="form-control-label") }}
+										{% if form1.password.errors %}
+											{{ form1.password(class="form-control form-control-lg is-invalid") }}
+											<div class="invalid-feedback">
+												{% for error in form1.password.errors %}
+													<span>{{ error }}</span>
+												{% endfor %}
+											</div>
+										{% else %}
+											{{ form1.password(class="form-control form-control-lg") }}
+										{% endif %}
+									</div>
+									<div class="form-check">
+										{{ form1.remember(class="form-check-input") }}
+										{{ form1.remember.label(class="form-check-label") }}
+									</div>
+								</fieldset>
+								<div class="form-group">
+									{{ form1.submit(class="btn btn-outline-info") }}
+								</div>
+								<small class="text-muted ml-2">
+									<a href="/resetrequest">Forgot Password?</a>
+								</small>
+							</form>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<p>By logging in you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+
+
+<style>
+	
+.login-right input[type="text"], .login-right input[type="password"], .login-bottom input[type="text"], .login-bottom input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-weight: normal;
+    background: none;
+    border: 1px solid #E6E4E4;
+    color: black;
+    outline: none;
+    font-size: 14px;
+    margin: 6px 0 17px 0px;
+}
+</style>

@@ -1,0 +1,19 @@
+{% extends "slayout.html" %}
+{% block content %}
+
+<div class="card-deck">
+    {% for offer in offers %}
+      <div class="card" style="min-width: 15.5rem;max-width:15.5rem;padding: 10px">
+        <img src="{{offer.image}}" class="card-img-top" alt="{{offer.product}}">
+        <div class="card-body">
+          <p class="card-text dealprice">&#x20b9;{{offer.new_price}}</p>
+          <p class="card-text">M.R.P:&#x20b9;<span class="actprice">{{offer.old_price}}</span> ({{offer.offer_per}}% off)</p>
+          <p class="card-text">{{offer.product}}</p>
+          <p class="card-text">{{offer.mall}},{{offer.shop}}</p>
+        </div>
+      </div>
+    {% endfor%}
+  </div>
+
+
+{% endblock %}

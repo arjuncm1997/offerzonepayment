@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+    <div class="card-deck" style="width:2000px">
+        {% for shop in shops %}
+        
+        <div class="card bg-light">
+            
+          <div class="card-body text-center">
+              <img class="card-img-top" src="static/pics/{{shop.image}}" >
+            <h6 class="card-text">{{shop.name}}</h6>
+            <h6 class="card-text">{{shop.desc}}</h6>
+            <a href="#" class="btn btn-primary">{{shop.category}}</a>
+
+            <a href="#" class="btn btn-danger">{{shop.mallid}}</a><br>
+
+            <a href="{{ url_for('show_malls') }}" class="btn btn-dark">See Malls</a>
+          </div>
+        </div>
+      
+        {% endfor %}
+     
+    </div>
+
+{% endblock content %}

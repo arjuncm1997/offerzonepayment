@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="card-deck">
+        {% for mall in malls %}
+        <div class="card bg-light">
+          <div class="card-body text-center">
+            <h2 class="card-text">{{mall.name}}</h2>
+            <h3 class="card-text">{{mall.shops}}</h3>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+{% endblock content %}

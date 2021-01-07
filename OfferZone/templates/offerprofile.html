@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>offerzone</title>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="../static/pstatic/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- pignose css -->
+<link href="../static/pstatic/css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
+
+
+<!-- //pignose css -->
+<link href="../static/pstatic/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="../static/pstatic/js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<!-- cart -->
+	<script src="../static/pstatic/js/simpleCart.min.js"></script>
+<!-- cart -->
+<!-- for bootstrap working -->
+	<script type="text/javascript" src="../static/pstatic/js/bootstrap-3.1.1.min.js"></script>
+<!-- //for bootstrap working -->
+</head>
+<body>
+
+	<header>
+		<!-- top-bar -->
+		{% with messages = get_flashed_messages(with_categories=true) %}
+		<!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
+		{% if messages %}
+		  {% for category, message in messages %}
+			<div class="alert alert-{{ category }} alert-dismissible" role="alert" style="font-size: 1.5rem;">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<!-- <strong>Title</strong> --> {{ message }}
+			</div>
+		  {% endfor %}
+		{% endif %}
+	  {% endwith %}
+	</header>
+<!-- header -->
+<!-- <div class="header">
+	<div class="container">
+		<ul>
+			<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:info@example.com">info@example.com</a></li>
+		</ul>
+	</div>
+</div> -->
+<!-- //header -->
+<!-- header-bot -->
+<div class="header-bot">
+	<div class="container" style="
+    padding-top: 0px;
+    padding-bottom: 0px;
+">
+		<div class="col-md-3 header-left">
+			<h1><a href="/"><img src="../static/pstatic/images/logo4.png"></a></h1>
+		</div>
+		<center>
+		<div class="col-md-6 middle" style="padding-top: 30px;"><h4 class="glyphicon glyphicon-envelope"> OfferZone@gmail.com</h4> </div>
+	</center>
+		<div class="col-md-3 header-right footer-bottom">
+			<ul>
+				<!-- <li><a href="#" class="use1" data-toggle="modal" data-target="#myModal4"><span>Login</span></a>
+					
+				</li> -->
+				<li><a class="fb" href="#"></a></li>
+				<li><a class="twi" href="#"></a></li>
+				<li><a class="insta" href="#"></a></li>
+				<li><a class="you" href="#"></a></li>
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!-- //header-bot -->
+<!-- banner -->
+<div class="ban-top">
+	
+	
+			 
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+				  <ul class="nav navbar-nav menu__list" style="margin-left: 1000px;" >
+					<li class="active menu__item menu__item--current"><a class="menu__link" href="/">Home <span class="sr-only">(current)</span></a></li>
+				 </ul>
+				</div>
+			 
+				
+		
+	
+</div>
+
+
+
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 img">
+        <img style="width: 275px;height: 183px;" src="../static/pics/{{pro.img}}"  alt="" class="img-rounded">
+      </div>
+      <div class="col-md-6 details">
+        <blockquote>
+          <h2>{{pro.name}}</h2>
+          <small><cite title="Source Title">  <i class="icon-map-marker"></i></cite></small>
+        </blockquote>
+        <h4 style="font-size: 24px;">PRICE:${{offer.price}}/-   <del style="font-size: 15px;color: red;">${{pro.price}}/-</del></h4>
+        <p style="">{{discount}}% off
+        <p style="font-size: 25px;margin-top: 20px;"> 
+            
+            Shop: {{sho.name}} <br>
+            Mall: {{mal.name}}
+          </p>
+      </div>
+    </div>
+  </div>
+  
+  <style>
+  
+  .container{
+      padding:5%;
+  }
+  .container .img{
+      text-align:center;
+  }
+  .container .details{
+      border-left:3px solid #ded4da;
+  }
+  .container .details p{
+      font-size:15px;
+      font-weight:bold;
+  }
+  
+  </style>
+
+
+
+
+
+<!-- //content-bottom -->
+<!-- product-nav -->
+
+
+<!-- //product-nav -->
+
+
+
+
+<!-- footer -->
+<div class="footer" style="
+padding-bottom: 0px;
+padding-top: 0px;
+border-top-width: 1px;
+">
+	<div class="container">
+		<div class="col-md-3 footer-left">
+			<h2><a href="/"><img src="../static/pstatic/images/logo4.png" alt=" " style="
+				width: 186px;
+				height: 74px;
+			"/></a></h2>
+			<p>Neque porro quisquam est, qui dolorem ipsum quia dolor
+			sit amet, consectetur, adipisci velit, sed quia non 
+			numquam eius modi tempora incidunt ut labore 
+			et dolore magnam aliquam quaerat voluptatem.</p>
+		</div>
+		<div class="col-md-9 footer-right">
+			
+			<div class="clearfix"></div>
+			<div class="sign-grds">
+				<div class="col-md-4 sign-gd">
+					<h4>Information</h4>
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#gallery">Gallery</a></li>
+						<li><a href="#offer">Offers</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</div>
+				
+				<div class="col-md-4 sign-gd-two">
+					<h4>Store Information</h4>
+					<ul>
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Address : 1234k Avenue, 4th block, <span>Newyork City.</span></li>
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email : <a href="mailto:info@example.com">OfferZone@gmail.com</a></li>
+						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone : +1234 567 567</li>
+					</ul>
+				</div>
+				<div class="col-md-4 sign-gd flickr-post">
+					<h4>Flickr Posts</h4>
+					<ul>
+						<li><a href="single.html"><img src="../static/pstatic/images/b15.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="../static/pstatic/images/b16.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="../static/pstatic/images/b17.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="../static/pstatic/images/b18.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="../static/pstatic/images/b15.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="../static/pstatic/images/b16.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="../static/pstatic/images/b17.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="../static/pstatic/images/b18.jpg" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="../static/pstatic/images/b15.jpg" alt=" " class="img-responsive" /></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<p class="copy-right"> All rights reserved | Design by <a href="/">OfferZone</a></p>
+	</div>
+</div>
+<!-- //footer -->
+<!-- login -->
+			
+<!-- //login -->
+<!---registerrr-->
+
+</body>
+</html>

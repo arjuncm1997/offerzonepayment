@@ -1,0 +1,128 @@
+{% extends 'admin.html'%}
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+            <div class="content-section">
+                    <div class="media">
+                            <img class="rounded-circle account-img" src="{{pic}}">
+                            <div class="media-body">
+                              
+                             
+                            </div>
+                     </div>
+                     <form method="POST" action="" enctype="multipart/form-data">
+                        {{ form.hidden_tag() }}
+                        <fieldset class="form-group">
+                            <legend class="border-bottom mb-4">{{title}}</legend>
+                            <div class="form-group">
+                                {{ form.name.label(class="form-control-label") }}
+    
+                                {% if form.name.errors %}
+                                    {{ form.name(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.name.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.name(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form.owner.label(class="form-control-label") }}
+                                {% if form.owner.errors %}
+                                    {{ form.owner(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.owner.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.owner(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form.price.label(class="form-control-label") }}
+                                {% if form.price.errors %}
+                                    {{ form.price(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.price.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.price(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form.desc.label(class="form-control-label") }}
+                                {% if form.desc.errors %}
+                                    {{ form.desc(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.desc.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.desc(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                          
+                        <div class="form-group">
+                            {{ form.shop.label(class="form-control-label") }}
+                            {% if form.shop.errors %}
+                            {{ form.shop(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.shop.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.shop(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.pic.label() }}
+                        {{ form.pic(class="form-control-file") }}
+                        {% if form.pic.errors %}
+                            {% for error in form.pic.errors %}
+                                <span class="text-danger">{{ error }}</span></br>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+    
+    
+    
+                        </fieldset>
+                        <div class="form-group">
+                            {{ form.submit(class="btn btn-outline-info") }}
+                            {% if action %}
+                            <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                            {% endif %}
+                       </div>
+                </form>
+                {% if action %}
+                 <!-- Modal -->
+                 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" >Delete Product?</h5>
+                            <button type="button" class="close" data-dismiss="modal" ></button>
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <form action="/productdelete/{{product.id}}" method="POST">
+                                <input class="btn btn-danger" type="submit" value="Delete">
+                            </form>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+</div>
+{% endblock %}
